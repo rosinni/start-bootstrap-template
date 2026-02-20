@@ -5,71 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Proyecto Bootstrap</title>
 
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">ComIT</a>
-
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fa-brands fa-instagram me-2 fs-3"></i> 
+                <span class="fw-bold fs-4">Instagram</span> 
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse justify-content-lg-end text-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
+                        <button type="button"
+        class="btn btn-success me-2"
+        data-bs-toggle="modal"
+        data-bs-target="#newPostModal">
+    Crear un nuevo post
+</button>
+                    </li> 
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i> 
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li><a class="dropdown-item" href="#">Privacidad</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero d-flex align-items-center text-center text-white">
-        <div class="container">
-            <h1 class="display-4">Bienvenido a Mi Proyecto</h1>
-            <p class="lead">Plantilla base con HTML, CSS y Bootstrap</p>
-            <a href="#" class="btn btn-primary btn-lg">Comenzar</a>
+    <section class="view-switcher-wrapper">
+
+  <div class="container d-flex justify-content-center">
+
+    <div class="view-switcher-bubble">
+
+      <ul class="nav border-0" id="viewTabs" role="tablist">
+
+        <li class="nav-item">
+          <button class="nav-link active"
+                  data-bs-toggle="tab"
+                  data-bs-target="#gridView"
+                  type="button">
+            <i class="fa-solid fa-table-cells"></i>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <button class="nav-link"
+                  data-bs-toggle="tab"
+                  data-bs-target="#singleView"
+                  type="button">
+            <i class="fa-solid fa-square"></i>
+          </button>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<div class="tab-content bg-light py-4">
+
+  <div class="tab-pane fade show active"
+     id="gridView"
+     role="tabpanel">
+    <div class="container">
+  <div class="row g-2">
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a"
+           class="img-fluid w-100">
+    </div>
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a"
+           class="img-fluid w-100">
+    </div>
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0"
+           class="img-fluid w-100">
+    </div>
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
+           class="img-fluid w-100">
+    </div>
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+           class="img-fluid w-100">
+    </div>
+
+    <div class="col-6 col-md-4">
+      <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d"
+           class="img-fluid w-100">
+    </div>
+
+  </div>
+</div>
+  </div>
+
+  <div class="tab-pane fade"
+     id="singleView"
+     role="tabpanel">
+    <div class="container d-flex justify-content-center">
+
+  <div class="card" style="width: 32rem;">
+
+    <!-- Header del post -->
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+      <span class="fw-bold">Metal Sonic Plush>>>></span>
+      <small class="text-muted">02/20</small>
+    </div>
+
+    <!-- Imagen -->
+    <img src="https://preview.redd.it/send-me-all-your-bootleg-metal-sonic-plush-images-v0-dpx36hxch3ge1.jpeg?width=828&format=pjpg&auto=webp&s=d2c03971ea3738fda4de1f193fe8820aadd3f055"
+     class="card-img-top">
+
+    <!-- Cuerpo -->
+    <div class="card-body">
+
+      <!-- Iconos -->
+      <div class="mb-2 fs-5">
+        <i class="fa-regular fa-heart me-3 like-btn"></i>
+        <i class="fa-regular fa-comment me-3"></i>
+        <i class="fa-regular fa-paper-plane"></i>
+      </div>
+
+      <!-- Likes -->
+      <p class="fw-bold mb-1">204 Likes</p>
+
+      <!-- Descripción -->
+      <p>
+        Metal Sonic es lo mejor que me ha pasado en la vida.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+  </div>
+
+</div>
+
+<!-- Modal Nuevo Post -->
+<div class="modal fade" id="newPostModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Crear nuevo post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+
+        <div class="mb-3">
+          <label class="form-label">URL de la imagen</label>
+          <input type="text" class="form-control" placeholder="Pega la URL aquí">
         </div>
-    </header>
 
-    <!-- Sección principal -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <h3>Columna 1</h3>
-                    <p>Contenido de ejemplo usando el grid de Bootstrap.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Columna 2</h3>
-                    <p>Layout responsive automático con clases col-md-4.</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Columna 3</h3>
-                    <p>En móviles se apilan automáticamente.</p>
-                </div>
-            </div>
+        <div class="mb-3">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" rows="3" placeholder="Escribe una descripción..."></textarea>
         </div>
-    </section>
 
+      </div>
 
-    <!-- Bootstrap JS -->
+      <!-- Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-primary">
+          Publicar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener("click", function(e) {
+  if (e.target.classList.contains("like-btn")) {
+    e.target.classList.toggle("fa-regular");
+    e.target.classList.toggle("fa-solid");
+    e.target.classList.toggle("text-danger");
+  }
+});
+</script>
 
 </body>
 </html>
